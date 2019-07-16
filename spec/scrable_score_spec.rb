@@ -32,4 +32,8 @@ describe('Scrabble#score') do
     expect(scrabble.score("Q")).to(eq(10))
   end
 
+  it("returns a total score for a word") do
+    expect(scrabble.score("DOG")).to(eq(5))
+  end
+
 end

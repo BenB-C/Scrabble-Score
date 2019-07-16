@@ -45,7 +45,14 @@ class Scrabble
     end
   end
 
-  def score(letter)
-    @letter_points.fetch(letter.upcase)
+  def score(word)
+    points = 0
+    # word.length.times do |i|
+    #   points += @letter_points.fetch(word[i].upcase)
+    # end
+    word.split("").each do |letter|
+      points += @letter_points.fetch(letter.upcase)
+    end
+    points
   end
 end
