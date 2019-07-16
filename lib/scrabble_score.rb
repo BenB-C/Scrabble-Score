@@ -2,48 +2,27 @@ class Scrabble
   def initialize
     @letter_points = Hash.new()
 
-    letters = ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"]
-    points = 1
-    letters.each do |letter|
-      @letter_points.store(letter, points)
+    ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"].each do |letter|
+      @letter_points.store(letter, 1)
     end
-
-    letters = ["D", "G"]
-    points = 2
-    letters.each do |letter|
-      @letter_points.store(letter, points)
+    ["D", "G"].each do |letter|
+      @letter_points.store(letter, 2)
     end
-
-    letters = ["B", "C", "M", "P"]
-    points = 3
-    letters.each do |letter|
-      @letter_points.store(letter, points)
+    ["B", "C", "M", "P"].each do |letter|
+      @letter_points.store(letter, 3)
     end
-
-    letters = ["F", "H", "V", "W", "Y" ]
-    points = 4
-    letters.each do |letter|
-      @letter_points.store(letter, points)
+    ["F", "H", "V", "W", "Y" ].each do |letter|
+      @letter_points.store(letter, 4)
     end
-
-    letters = ["K"]
-    points = 5
-    letters.each do |letter|
-      @letter_points.store(letter, points)
+    @letter_points.store("K", 5)
+    ["J", "X"].each do |letter|
+      @letter_points.store(letter, 8)
     end
-
-    letters = ["J", "X"]
-    points = 8
-    letters.each do |letter|
-      @letter_points.store(letter, points)
-    end
-
-    letters = ["Q", "Z"]
-    points = 10
-    letters.each do |letter|
-      @letter_points.store(letter, points)
+    ["Q", "Z"].each do |letter|
+      @letter_points.store(letter, 10)
     end
   end
+
 
   def score(word)
     points = 0
